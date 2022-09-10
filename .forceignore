@@ -10,3 +10,6 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+# Ignore admin profile, use permission set group instead
+**/profiles/Admin.profile-meta.xml

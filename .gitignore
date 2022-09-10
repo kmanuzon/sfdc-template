@@ -42,3 +42,6 @@ $RECYCLE.BIN/
 # fflib
 sfdx-source/fflib-apex-mocks
 sfdx-source/fflib-apex-common
+
+# Ignore admin profile, use permission set group instead
+**/profiles/Admin.profile-meta.xml
