@@ -3,5 +3,6 @@
     <description>Keys to the kingdom.</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>System Administrator</label>
+    <permissionSets>SyncVendor</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>
