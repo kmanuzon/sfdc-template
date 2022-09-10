@@ -9,7 +9,10 @@ public inherited sharing class JobsSelector extends fflib_SObjectSelector implem
     {
         return new List<Schema.SObjectField>
         {
-            Job__c.Id
+            Job__c.Id,
+            Job__c.Project__c,
+            Job__c.Tasks__c,
+            Job__c.Vendor__c
         };
     }
 

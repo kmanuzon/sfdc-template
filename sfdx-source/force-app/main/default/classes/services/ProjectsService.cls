@@ -4,4 +4,9 @@ public inherited sharing class ProjectsService
     {
         return (IProjectsService) Application.Service.newInstance(IProjectsService.class);
     }
+
+    public static void syncVendor(Map<Id, List<Job__c>> jobsByProjectId)
+    {
+        service().syncVendor(jobsByProjectId);
+    }
 }

@@ -9,7 +9,10 @@ public inherited sharing class ProjectsSelector extends fflib_SObjectSelector im
     {
         return new List<Schema.SObjectField>
         {
-            Project__c.Id
+            Project__c.Id,
+            Project__c.SP_Ground__c,
+            Project__c.SP_Power__c,
+            Project__c.SP_Tower__c
         };
     }
 
