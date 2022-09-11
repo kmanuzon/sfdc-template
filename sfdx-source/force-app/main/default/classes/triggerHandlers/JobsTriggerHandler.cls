@@ -5,7 +5,7 @@ public without sharing class JobsTriggerHandler extends fflib_SObjectDomain
         super(records);
     }
 
-    public override void onAfterUpdate(Map<Id,SObject> existingRecords)
+    public override void onAfterUpdate(Map<Id, SObject> existingRecords)
     {
         onChangeTask();
     }

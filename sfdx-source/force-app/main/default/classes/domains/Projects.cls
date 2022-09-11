@@ -23,7 +23,7 @@ public inherited sharing class Projects extends fflib_SObjects implements IProje
 
     public static IProjects newInstance(List<Project__c> records)
     {
-        return (IProjects) Application.Domain.newInstance(records);
+        return (IProjects) Application.Domain.newInstance(records, Schema.Project__c.SObjectType);
     }
 
     public static IProjects newInstance(Set<Id> ids)

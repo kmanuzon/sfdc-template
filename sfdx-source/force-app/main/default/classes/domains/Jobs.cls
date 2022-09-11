@@ -2,7 +2,7 @@ public inherited sharing class Jobs extends fflib_SObjects implements IJobs
 {
     public static IJobs newInstance(List<Job__c> records)
     {
-        return (IJobs) Application.Domain.newInstance(records);
+        return (IJobs) Application.Domain.newInstance(records, Schema.Job__c.SObjectType);
     }
 
     public static IJobs newInstance(Set<Id> ids)
@@ -13,6 +13,32 @@ public inherited sharing class Jobs extends fflib_SObjects implements IJobs
     public Jobs(List<Job__c> records)
     {
         super(records);
+    }
+
+    public IJobs filterByNotInVendor(Id value)
+    {
+        return filterByNotInVendor(new Set<Id> { value });
+    }
+
+    public IJobs filterByNotInVendor(Set<Id> values)
+    {
+        Schema.SObjectField field = Schema.Job__c.Vendor__c;
+        Set<Object> genericValues = SharedUtilities.convertToObject(values);
+
+        return newInstance(SharedUtilities.getRecordsByNotInFieldValues(getRecords(), field, genericValues));
+    }
+
+    public IJobs filterByProject(Id value)
+    {
+        return filterByProject(new Set<Id> { value });
+    }
+
+    public IJobs filterByProject(Set<Id> values)
+    {
+        Schema.SObjectField field = Schema.Job__c.Project__c;
+        Set<Object> genericValues = SharedUtilities.convertToObject(values);
+
+        return newInstance(getRecordsByFieldValues(field, genericValues));
     }
 
     public Map<Id, List<Job__c>> getRecordsByProjectId()
@@ -30,6 +56,13 @@ public inherited sharing class Jobs extends fflib_SObjects implements IJobs
         }
 
         return valuesByKey;
+    }
+
+    public IJobs setVendor(Id value)
+    {
+        setFieldValue(Schema.Job__c.Vendor__c, value);
+
+        return this;
     }
 
     public class Constructor implements fflib_IDomainConstructor

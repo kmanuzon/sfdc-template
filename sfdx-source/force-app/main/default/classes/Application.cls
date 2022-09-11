@@ -4,9 +4,9 @@ public inherited sharing class Application
         new fflib_Application.UnitOfWorkFactory(
             new List<SObjectType>
             {
-                Account.SObjectType,
-                Job__c.SObjectType,
-                Project__c.SObjectType
+                Schema.Account.SObjectType,
+                Schema.Job__c.SObjectType,
+                Schema.Project__c.SObjectType
             }
         );
 
@@ -23,8 +23,8 @@ public inherited sharing class Application
         new fflib_Application.SelectorFactory(
             new Map<SObjectType, Type>
             {
-                Job__c.SObjectType => JobsSelector.class,
-                Project__c.SObjectType => ProjectsSelector.class
+                Schema.Job__c.SObjectType => JobsSelector.class,
+                Schema.Project__c.SObjectType => ProjectsSelector.class
             }
         );
 
@@ -33,8 +33,8 @@ public inherited sharing class Application
             Application.Selector,
             new Map<SObjectType, Type>
             {
-                Job__c.SObjectType => Jobs.Constructor.class,
-                Project__c.SObjectType => Projects.Constructor.class
+                Schema.Job__c.SObjectType => Jobs.Constructor.class,
+                Schema.Project__c.SObjectType => Projects.Constructor.class
             }
         );
 }
