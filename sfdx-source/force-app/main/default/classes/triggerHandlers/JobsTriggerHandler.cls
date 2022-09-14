@@ -17,7 +17,7 @@ public without sharing class JobsTriggerHandler extends fflib_SObjectDomain
             Schema.Job__c.Tasks__c
         };
 
-        List<Job__c> changedRecords = getChangedRecords(fields);
+        List<Job__c> changedRecords = (List<Job__c>) getChangedRecords(fields);
 
         if (changedRecords.isEmpty()) return;
 

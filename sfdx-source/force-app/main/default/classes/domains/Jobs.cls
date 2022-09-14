@@ -35,10 +35,7 @@ public inherited sharing class Jobs extends fflib_SObjects implements IJobs
 
     public IJobs filterByProject(Set<Id> values)
     {
-        Schema.SObjectField field = Schema.Job__c.Project__c;
-        Set<Object> genericValues = SharedUtilities.convertToObject(values);
-
-        return newInstance(getRecordsByFieldValues(field, genericValues));
+        return newInstance(getRecordsByFieldValues(Schema.Job__c.Project__c, SharedUtilities.convertToObject(values)));
     }
 
     public Map<Id, List<Job__c>> getRecordsByProjectId()

@@ -1,4 +1,4 @@
 public interface IProjects extends fflib_ISObjects
 {
-    Projects setSpVendorFields(Map<Id, List<Job__c>> jobsByProjectId);
+    IProjects setSpVendorFields(Map<Id, List<Job__c>> jobsByProjectId);
 }

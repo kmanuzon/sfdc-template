@@ -36,7 +36,7 @@ public inherited sharing class Projects extends fflib_SObjects implements IProje
         super(records);
     }
 
-    public Projects setSpVendorFields(Map<Id, List<Job__c>> jobsByProjectId)
+    public IProjects setSpVendorFields(Map<Id, List<Job__c>> jobsByProjectId)
     {
         for (Project__c project : (List<Project__c>) getRecords())
         {

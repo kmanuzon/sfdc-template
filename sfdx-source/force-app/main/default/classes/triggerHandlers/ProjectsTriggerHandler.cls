@@ -21,9 +21,9 @@ public without sharing class ProjectsTriggerHandler extends fflib_SObjectDomain
         {
             Set<String> fields = new Set<String> { Projects.projectSpVendorByJobTask.get(task) };
 
-            List<Project__c> changedRecords = getChangedRecords(fields);
+            List<Project__c> changedRecords = (List<Project__c>) getChangedRecords(fields);
 
-            if (changedRecords.isEmpty() == false)
+            if (!changedRecords.isEmpty())
             {
                 projectsByTask.put(task, changedRecords);
             }
